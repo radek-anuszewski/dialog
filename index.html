@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dialog</title>
+	<style>
+		body {
+				padding: 24px;
+		}
+
+		button {
+				cursor: pointer;
+		}
+
+		dialog {
+				padding: 24px;
+				border: 1px lightgray;
+				border-radius: 8px;
+        box-shadow: 0 0 15px -1px rgba(66, 68, 90, 1);
+		}
+
+		dialog::backdrop {
+        background: linear-gradient(-20deg, rgba(130, 252, 96, 0.6) 0%, rgba(68, 133, 255, 0.6) 100%);
+		}
+	</style>
+	<script type="module">
+		const dialog = document.querySelector("dialog");
+    const open = document.querySelector("#open");
+    const close = document.querySelector("#close");
+
+    open.addEventListener("click", () => dialog.showModal());
+    close.addEventListener("click", () => dialog.close());
+	</script>
+</head>
+<body>
+<header>
+  <h1>Dialog</h1>
+</header>
+<main>
+	<button id="open">Open dialog</button>
+	<dialog>
+		<header>
+			<h2>Dialog header</h2>
+		</header>
+		<article>
+			<h3>Some title</h3>
+			<section>
+				<h4>First paragraph</h4>
+				<p>First paragraph text</p>
+			</section>
+			<section>
+				<h4>Second paragraph</h4>
+				<p>Second paragraph text</p>
+			</section>
+		</article>
+		<footer>
+			<button id="close">Close dialog</button>
+		</footer>
+	</dialog>
+</main>
+</body>
+</html>
